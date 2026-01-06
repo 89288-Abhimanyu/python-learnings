@@ -179,7 +179,7 @@ set.discard   # to remove safely
 set.clear
 # set.len()
 # set.in()       # same as contains of java
-"""
+
 
 # DICTIONARY
 # They are same as java except no generics, values can be type, and keys must be immutable
@@ -231,4 +231,109 @@ squares = {x: x*x for x in range(5)}   # to store 1 to 5 squares in dictionary
 if "name" in user:                   # to check if key exists
     print("Exists")
 
+
+"""
+
+# NESTED LIST
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+print(matrix[0][1])
+# Uses - matrices, tables, grids(games, ML, Excel like data)
+
+# NESTED DICTIONARY
+user = {
+    "id": 1,
+    "name": "Abhi",
+    "address": {
+        "city": "Delhi",
+        "pin": 110001
+    }
+}
+print(["address"]["city"])
+# uses - json responses, configuration files, Domain objects
+
+# LIST OF DICTIONARIES
+users = [
+    {
+        "id": 1,
+        "name": "Abhimanyu",
+        "role": "Software developer",
+        "position": "Intern"
+    },
+    {
+        id: 2,
+        "name": "Bhagirath",
+        "role": "Software Developer",
+        "position": "Intern"
+    },
+    {
+        id: 3,
+        "name": "Sanchit",
+        "role": "Software Developer",
+        "position": "Employee"
+    },
+    {
+        "id": 4,
+        "name": "Juili",
+        "role": "Software Developer",
+        "position": "Employee"
+    },
+    {
+        "id": 5,
+        "name": "Vaibhav",
+        "role": "Software Developer",
+        "position": "Employee"
+    }
+]
+print(users[0]["name"])
+# uses- database rows, API responses, Search results
+
+# DICTIONARY OF LISTS
+students = {
+    "name": "Abhi",
+    "subjects": ["Math", "Science", "English", "Psychology"]
+}
+print(students["subjects"][1])
+
+# MIXED NESTED STRUCTURES
+
+company = {
+    "name": "TechCorp",
+    "employees": [
+        {
+            "id": 1,
+            "name": "Abhi",
+            "skills": ["Python", "Java"]
+        },
+        {
+            "id": 2,
+            "name": "Ravi",
+            "skills": ["SQL", "AWS"]
+        }
+    ]
+}
+
+print(company["employees"][0]["skills"][1])
+#uses - REST APIs, Microservices, MongoDB documents
+
+# Looping through nested structures
+# Nested list
+for row in matrix:
+    for value in row:
+        print(value)
+
+# list of dictionaries
+for user in users:
+    print(user["name"])
+
+# Nested dictionary
+for key, value in user["address"].items():
+    print(key, value)
+
+# Updating nested data
+users[0]["name"] = "Abhimanyu"
+company["employees"][1]["skills"].append("Docker")
 
