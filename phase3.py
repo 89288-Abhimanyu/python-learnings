@@ -58,17 +58,35 @@ print(multiply(3, 4))
 print(multiply.__doc__)             # This will also print document string of multiply on console
 
 
-
+"""
 # LAMBDA FUNCTION -- anonymous function written in a single line
 square = lambda x: x*x            # returns implicitly unlike java
 print(square(5)) 
 
+
+nums=[1,2,3,4,5,6,7]
 # MAP -- transforms data 
-nums=[1,2,3,4,5]
 squares = list(map(lambda x: x*x, nums))
 print(squares)
 
 # FILTERS -- selecting data
-nums = [4,5,6,7,8,9]
-
 evens = list(filter(lambda x:x%2 == 0, nums))
+print(evens)
+
+# REDUCE -- aggregation
+from functools import reduce
+total = reduce(lambda a,b : a+b, nums)
+print (total)
+
+# LIST COMPREHENSION
+squares = [x * x for x in nums]
+evens = [x for x in nums if x % 2 == 0]       # LIST COMPREHENSION IS PREFERRED OVER MAP/FILTERS
+
+
+# MODULES AND PACKAGES
+# A module is a .py file having a library code. We use that readymade code in another file after importing it using import keyword
+# A package is a directory containing multiple modules. __init__.py marks directory as a package.
+# pip -- it is a package manager of python used to install any dependency into our project. eg -- pip install flask
+# virtual environment -- it is an isolated pyton runtime with its own python interpreter, installed libraries so that other projects may not be impacted ie. it provides isolated classpath per project
+# requirements.txt -- this file lists exact python package dependencies for the project
+"""
